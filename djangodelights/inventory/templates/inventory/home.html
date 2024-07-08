@@ -1,0 +1,39 @@
+{% extends 'inventory/base.html' %}
+
+{% block content %}
+<div class="home">
+    <div>
+      <h2>Menu</h2>
+      <table class="line-table">
+        <thead>
+          <tr>
+            <th>Menu</th>
+            <th>Price</th>
+            <th>Ingredients</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for menu in menu_items %}
+          <tr>
+            <td>{{ menu.title }}</td>
+            <td>
+            {{ menu.price }}
+            </td> 
+                
+            {% for recipe in recipes %}
+                  {% if recipe.menu_item == menu %}
+            <td>
+                  {{ recipe.ingredient }}
+           
+                  {% endif %}
+                {% endfor %}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  {% endblock %}
+  
+

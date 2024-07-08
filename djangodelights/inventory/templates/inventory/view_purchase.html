@@ -1,0 +1,28 @@
+{% extends 'inventory/base.html' %}
+
+
+{% block content %}
+<h1>Purchases</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Menu Item</th>
+            <th>Timestamp</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for purchase in object_list %}
+        <tr>
+            <td>{{ purchase.menu_item.title }}</td>
+            <td>{{ purchase.timestamp }}</td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="2">No purchases recorded</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    <a href="{% url 'createPurchase' %}">Add Purchase</a>
+</table>
+{% endblock %}

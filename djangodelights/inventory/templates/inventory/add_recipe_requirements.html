@@ -1,0 +1,14 @@
+<!-- templates/add_recipe_requirements.html -->
+
+{% extends 'inventory/base.html' %}
+
+
+{% block content %}
+<h1>Add Recipe Requirements</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Recipe Requirements</button>
+</form>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'inventory/base.html' %}
+{% load static %} 
+{% block content %}
+<div >
+  <div>
+    <h2>Menu</h2>
+    <table class="line-table">
+      <thead>
+        <tr>
+          <th>Menu</th>
+          <th>Price</th>
+          <th>Ingredients</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for menu in object_list %}
+        <tr>
+          <td>{{ menu.title }}</td>
+          <td>{{ menu.price }}</td>
+          
+          <td><ul>
+            {% for recipe in menu.recipe_requirements.all %}
+            <li>
+              {{ recipe.ingredient.name }}
+            </li>
+            {% endfor %}
+          </ul></td>
+
+          <td><a href="{% url "deleteMenu" menu.id %}" style="text-decoration: none; color: inherit;">❌</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <a href="{% url 'createMenu' %}">Add Menu</a>
+  </div>
+</div>
+  {% endblock %}
