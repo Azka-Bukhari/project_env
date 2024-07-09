@@ -19,15 +19,18 @@
             <td>
             {{ menu.price }}
             </td> 
-                
-            {% for recipe in recipes %}
+            <td class="list">  
+              <ul>
+              {% for recipe in recipes %}
                   {% if recipe.menu_item == menu %}
-            <td>
+                <li>
                   {{ recipe.ingredient }}
-           
-                  {% endif %}
-                {% endfor %}
+                </li>
+                {% endif %}
+            {% endfor %}
+              </ul>
             </td>
+                  
           </tr>
           {% endfor %}
         </tbody>

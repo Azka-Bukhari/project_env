@@ -2,7 +2,7 @@
 
 
 {% block content %}
-<h1>Purchases</h1>
+<h2>Purchases</h2>
 
 <table>
     <thead>
@@ -23,6 +23,6 @@
         </tr>
         {% endfor %}
     </tbody>
-    <a href="{% url 'createPurchase' %}">Add Purchase</a>
 </table>
+<a class="add" href="{% url 'createPurchase' %}">ADD PURCHASE</a>
 {% endblock %}

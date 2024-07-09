@@ -1,0 +1,59 @@
+body {
+  font-family: "Itim", cursive;
+  margin: 0;
+}
+h1{
+  color: #fa8a09;
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+h2{
+  color: #fa8a09
+}
+.navbar{
+  display: flex;
+  justify-content:flex-start;
+  gap: 20px;
+  margin-left: 20px;
+}
+.nav-item{
+  
+  text-decoration: none;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px 20px;
+  color: black;
+}
+
+tr{
+  display: flex;
+  justify-items: space-between;
+  text-align: center;
+}
+.h{
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  
+}
+th{
+  width: 200px;
+}
+td{
+  width: 200px;
+}
+main{
+  margin-left: 20px;
+}
+.add{
+  text-decoration: none;
+  border: 1px solid #1875ee;
+  border-radius: 5px;
+  padding: 5px 20px;
+  color: #1875ee;
+  font-weight: bold;
+  position: relative;
+  left: 20px;
+  top: 30px;
+}

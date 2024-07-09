@@ -1,20 +1,27 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
+    <meta charset="utf-8" />
+    
     <link
       rel="stylesheet"
       type="text/css"
       href="{% static 'inventory/style.css' %}"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
 
+    <title>{% block title %}Django Delights{% endblock %}</title>
+    {% block head %}{% endblock %}
   </head>
   <body>
     <div class="app">
         <header>
           <div class="header-first-row">
             
-            <h1 class="title">Django Delights</h1>
+            <h1>Django Delights</h1>
           </div>
           <nav class="navbar">
             <a class="nav-item" href="{% url 'home' %}">Home</a>

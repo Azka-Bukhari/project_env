@@ -8,7 +8,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 
-@login_required
+
 class HomeView(TemplateView):
   template_name = "inventory/home.html"
 
@@ -20,7 +20,7 @@ class HomeView(TemplateView):
     context["purchases"] = Purchase.objects.all()
     return context
 
-class InventoryList(LoginRequiredMixin, ListView):
+class InventoryList(ListView):
     model= Ingredient
     template_name= "inventory/view_inventory.html"
 
@@ -37,7 +37,7 @@ class DeleteInventoryView(LoginRequiredMixin, DeleteView):
     template_name= "inventory/delete_ingredient.html"
     success_url = "/inventory/"
 
-class ListMenu(LoginRequiredMixin, ListView):
+class ListMenu(ListView):
     model = MenuItem
     template_name= "inventory/menu_view.html"
 
